@@ -28,15 +28,20 @@
         <div class="columns mb-5 mt-3 has-text-centered">
             <div class="column is-2"></div>
 ​
+            <!-- Start Button -->
+            <div class="column is-8 is-hidden" id="startButton">
+                <button class="button is-large is-link">Start</button>
+            </div>
+
             <div class="column is-4">
                 <p class="title is-4">
-                    A hike through the Swiss Alps
+                    A hike through the mountains
                 </p>
             </div>
 ​
             <div class="column is-4">
                 <p class="title is-4">
-                    Exploring the ruins of Rome
+                    Exploring a new city
                 </p>
             </div>
         </div>
@@ -44,13 +49,13 @@
         <!-- Choices -->
         <div class="columns mb-5 has-text-centered">
             <div class="column is-2"></div>
-​
-            <div class="column is-4">
-                <img id="firstImage" src="alps.png" class="choices" id="choiceOne" />
+​           
+            <div class="column is-4" id="imageA">
+                <img src="a1.png" class="choices" onclick="choiceOne()" id="choiceOne" />
             </div>
 ​
-            <div class="column is-4">
-                <img id="secondImage" src="rome.png" class="choices" id="choiceTwo" />
+            <div class="column is-4" id="imageB">
+                <img src="b1.png" class="choices" onclick="choiceTwo()" id="choiceTwo" />
             </div>
         </div>
 ​
@@ -59,23 +64,7 @@
             <div class="column is-2"></div>
 ​
             <div class="column is-8">
-                <progress class="progress is-link" value="20" max="100"></progress>
-            </div>
-        </div>
-        
-        <!-- Did you know -->
-        <div class="columns has-text-centered pb-5">
-            <div class="column is-4"></div>
-​
-            <div class="column is-4">
-                <div class="box has-background-link has-text-white">
-                <p class="title is-5 has-text-white mb-3">
-                    Did You Know:
-                </p>
-                <p class="is-italic has-text-white">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores tempore excepturi cumque, deserunt ducimus sunt rerum!
-                </p>
-                </div>
+                <progress class="progress is-link " value="0" max="100" id="progressBar"></progress>
             </div>
         </div>
     </div>
