@@ -59,6 +59,7 @@ function startQuiz() {
     quizQuestions.classList.remove('is-hidden')
     optionOne.textContent = firstOption[0]
     optionTwo.textContent = secondOption[0]
+    localStorage.clear()
 }
 
 //Quiz Questions
