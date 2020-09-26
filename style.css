@@ -341,7 +341,7 @@
   input,
   select,
   textarea {
-    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "omnes-pro", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   }
   
   code,
@@ -11368,4 +11368,13 @@
   .is-grey {
     background-color: #E3E5EB;
     height: 100vh;
+  }
+
+  .is-hero {
+    height: 900px;
+  }
+
+  .is-quiz {
+    height: 1000px;
+    margin-top: 200px;
   }

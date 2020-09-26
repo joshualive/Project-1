@@ -49,13 +49,12 @@ function resultsPageDirect() {
 
 //Start Quiz
 const startButton = document.getElementById('startButton')
-const quizQuestions = document.getElementById('quizQuestions')
+const quizSection = document.getElementById('quizSection')
 
 startButton.addEventListener('click', startQuiz)
 
 function startQuiz() {
-    startButton.classList.add('is-hidden')
-    quizQuestions.classList.remove('is-hidden')
+    quizSection.scrollIntoView({ behavior: 'smooth', block: 'start'})
     optionOne.textContent = firstOption[0]
     optionTwo.textContent = secondOption[0]
     localStorage.clear()
