@@ -21,7 +21,6 @@ function choiceOne() {
     c += 20
     document.getElementById('progressBar').value = `${c}`
     resultsPageDirect()
-
 }
 
 function choiceTwo() {

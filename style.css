@@ -356,6 +356,7 @@
     font-size: 1em;
     font-weight: 400;
     line-height: 1.5;
+    height: 100vh;
   }
   
   a {
@@ -11333,4 +11334,38 @@
 
   .choices {
     border-radius: 2%;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  }
+
+ .br-fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+  }
+
+  .bl-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+  }
+
+  .tr-fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+  }
+
+  .tl-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+  }
+
+  .is-grey {
+    background-color: #E3E5EB;
+    height: 100vh;
   }
