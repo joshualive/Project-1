@@ -20,28 +20,29 @@
             <div class="column is-3"></div>
 ​
             <div class="column is-6 has-text-centered">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo obcaecati dignissimos pariatur quibusdam praesentium iusto, excepturi rerum quae laudantium quod temporibus porro non dicta molestiae est corrupti asperiores nostrum at.
+                <p class="mb-5">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo obcaecati dignissimos pariatur quibusdam praesentium iusto, excepturi rerum quae laudantium quod temporibus porro non dicta molestiae est corrupti asperiores nostrum at.
+                </p>
+                <!-- Start Button -->
+                <button class="button is-medium is-link mt-5" id="startButton">Start</button>
             </div>
+
         </div>
 ​
         <!-- Questions -->
+        <main class="is-hidden" id="quizQuestions">
         <div class="columns mb-5 mt-3 has-text-centered">
             <div class="column is-2"></div>
-​
-            <!-- Start Button -->
-            <div class="column is-8 is-hidden" id="startButton">
-                <button class="button is-large is-link">Start</button>
-            </div>
 
             <div class="column is-4">
-                <p class="title is-4">
-                    A hike through the mountains
+                <p class="title is-4" id="optionOne">
+                    <!-- Option one text here -->
                 </p>
             </div>
 ​
             <div class="column is-4">
-                <p class="title is-4">
-                    Exploring a new city
+                <p class="title is-4" id="optionTwo">
+                    <!-- Option two text here -->
                 </p>
             </div>
         </div>
@@ -67,6 +68,7 @@
                 <progress class="progress is-link " value="0" max="100" id="progressBar"></progress>
             </div>
         </div>
+        </main>
     </div>
     <script src="script.js"></script>
 </body>
