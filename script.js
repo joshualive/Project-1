@@ -28,6 +28,7 @@ function choiceTwo() {
 
 function resultsPageDirect() {
     if (c === 100) {
-        location.replace("/results.html")
-    }
+        localStorage.setItem("userSelections",userSelections)
+        location.replace("results.html")
+        }
 }
