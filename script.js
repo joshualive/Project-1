@@ -5,6 +5,7 @@ let userSelections = 0
 let a = 1
 let b = 1
 let c = 0
+let d = 0
 
 function choiceOne() {
     userSelections++
@@ -13,10 +14,14 @@ function choiceOne() {
     if (a < 5) {
         imageA.innerHTML = `<img src="a${++a}.png" class="choices" onclick="choiceOne()" id="choiceOne" />`
         imageB.innerHTML = `<img src="b${++b}.png" class="choices" onclick="choiceTwo()" id="choiceTwo" />`
+        ++d
+        optionOne.textContent = firstOption[d]
+        optionTwo.textContent = secondOption[d]
     }
     c += 20
     document.getElementById('progressBar').value = `${c}`
     resultsPageDirect()
+
 }
 
 function choiceTwo() {
@@ -26,6 +31,9 @@ function choiceTwo() {
     if (a < 5) {
         imageB.innerHTML = `<img src="b${++b}.png" class="choices" onclick="choiceTwo()" id="choiceTwo" />`
         imageA.innerHTML = `<img src="a${++a}.png" class="choices" onclick="choiceOne()" id="choiceOne" />`
+        ++d
+        optionOne.textContent = firstOption[d]
+        optionTwo.textContent = secondOption[d]
     }
     c += 20
     document.getElementById('progressBar').value = `${c}`
@@ -59,7 +67,7 @@ const optionTwo = document.getElementById('optionTwo')
 
 const firstOption = [  
      'A hike in the mountains',
-     'Visiting a museum',
+     'Trying new foods',
      'Lounging on the beach',
      'Exploring on your own',
      'Checking out a non-touristy area',
@@ -67,7 +75,7 @@ const firstOption = [
 
 const secondOption = [
      'Exploring a city',
-     'Trying new foods',
+     'Visiting a museum',
      'Shopping for new clothes',
      'Getting the perfect Instagram photo',
      'A night at the hottest clubs',
