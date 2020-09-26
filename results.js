@@ -40,7 +40,7 @@ function SearchPhotos(cityResult) {
       let hit1 = document.getElementById("hit1");
       hit1.setAttribute("src", data.hits[1].largeImageURL);
       let hit2 = document.getElementById("hit2");
-      hit2.setAttribute("src", data.hits[2].largeImageURL);
+      hit2.setAttribute("src", data.hits[3].largeImageURL);
     });
 }
 
