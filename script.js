@@ -1,10 +1,11 @@
-// User selections
+// User Selections Score
 let userSelections = 0
 
 let a = 1
 let b = 1
 let c = 0
 
+// User Choices
 function choiceOne() {
     userSelections++
     let imageA = document.getElementById('imageA')
@@ -26,9 +27,21 @@ function choiceTwo() {
     resultsPageDirect()
 }
 
+// After quiz completes, direct to 
 function resultsPageDirect() {
     if (c === 100) {
         localStorage.setItem("userSelections",userSelections)
         location.replace("results.html")
         }
+}
+
+//Start Quiz
+let startButton = document.getElementById('startButton')
+let quizQuestions = document.getElementById('quizQuestions')
+
+startButton.addEventListener('click', startQuiz)
+
+function startQuiz() {
+    startButton.classList.add('is-hidden')
+    quizQuestions.classList.remove('is-hidden')
 }
