@@ -57,7 +57,6 @@ function startQuiz() {
     quizSection.scrollIntoView({ behavior: 'smooth', block: 'start'})
     optionOne.textContent = firstOption[0]
     optionTwo.textContent = secondOption[0]
-    localStorage.clear()
 }
 
 //Quiz Questions
@@ -76,6 +75,6 @@ const secondOption = [
      'Exploring a city',
      'Visiting a museum',
      'Shopping for new clothes',
-     'Getting the perfect Instagram photo',
+     'Getting the perfect selfie',
      'A night at the hottest clubs',
 ]

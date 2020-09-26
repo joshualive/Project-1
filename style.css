@@ -1097,13 +1097,13 @@
   }
   
   .button.is-link {
-    background-color: #3273dc;
+    background-color: #243C55;
     border-color: transparent;
     color: #fff;
   }
   
   .button.is-link:hover, .button.is-link.is-hovered {
-    background-color: #276cda;
+    background-color: #0C1C2D;
     border-color: transparent;
     color: #fff;
   }
@@ -1118,7 +1118,7 @@
   }
   
   .button.is-link:active, .button.is-link.is-active {
-    background-color: #2366d1;
+    background-color: #243C55;
     border-color: transparent;
     color: #fff;
   }
@@ -2488,19 +2488,19 @@
   }
   
   .progress.is-link::-webkit-progress-value {
-    background-color: #3273dc;
+    background-color: #243C55;
   }
   
   .progress.is-link::-moz-progress-bar {
-    background-color: #3273dc;
+    background-color: #243C55;
   }
   
   .progress.is-link::-ms-fill {
-    background-color: #3273dc;
+    background-color: #243C55;
   }
   
   .progress.is-link:indeterminate {
-    background-image: linear-gradient(to right, #3273dc 30%, #ededed 30%);
+    background-image: linear-gradient(to right, #243C55 30%, #ededed 30%);
   }
   
   .progress.is-info::-webkit-progress-value {
