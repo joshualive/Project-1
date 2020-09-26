@@ -199,3 +199,10 @@ function Versailles() {
     A dazzling accompaniment to the Palace of Versaille, the Gardens of Versailles cover 800 hectares of land with sculptures, rare flowers and vivid greenery. Gaining status as a UNESCO World Heritage Site in 1979, the gardens consist of meticulously manicured lawns and grand fountains. These allow visitors to truly experience the brilliance of living in a French royal court. Plan your visit during summer, when water shows are performed every evening.
   </p>`;
 }
+
+const reStartButton = document.getElementById('reStartButton')
+reStartButton.addEventListener('click', backToMain)
+
+function backToMain(){
+  location.replace("index.html")
+}
