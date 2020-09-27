@@ -12,8 +12,8 @@ function choiceOne() {
     const imageA = document.getElementById('imageA')
     const imageB = document.getElementById('imageB')
     if (a < 5) {
-        imageA.innerHTML = `<img src="a${++a}.png" class="choices" onclick="choiceOne()" id="choiceOne" />`
-        imageB.innerHTML = `<img src="b${++b}.png" class="choices" onclick="choiceTwo()" id="choiceTwo" />`
+        imageA.innerHTML = `<img src="images/a${++a}.png" class="choices" onclick="choiceOne()" id="choiceOne" />`
+        imageB.innerHTML = `<img src="images/b${++b}.png" class="choices" onclick="choiceTwo()" id="choiceTwo" />`
         ++d
         optionOne.textContent = firstOption[d]
         optionTwo.textContent = secondOption[d]
@@ -28,8 +28,8 @@ function choiceTwo() {
     const imageA = document.getElementById('imageA')
     const imageB = document.getElementById('imageB')
     if (a < 5) {
-        imageB.innerHTML = `<img src="b${++b}.png" class="choices" onclick="choiceTwo()" id="choiceTwo" />`
-        imageA.innerHTML = `<img src="a${++a}.png" class="choices" onclick="choiceOne()" id="choiceOne" />`
+        imageB.innerHTML = `<img src="images/b${++b}.png" class="choices" onclick="choiceTwo()" id="choiceTwo" />`
+        imageA.innerHTML = `<img src="images/a${++a}.png" class="choices" onclick="choiceOne()" id="choiceOne" />`
         ++d
         optionOne.textContent = firstOption[d]
         optionTwo.textContent = secondOption[d]

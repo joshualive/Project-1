@@ -6,7 +6,7 @@ function locationSelector() {
     cityResult = "Kauai, Hawaii";
     Kauai();
   } else if (userSelections == 6) {
-    cityResult = "Maldives";
+    cityResult = "the Maldives";
     Maldives();
   } else if (userSelections == 7) {
     cityResult = "Versailles, France";
@@ -181,7 +181,7 @@ function Maldives() {
 function Versailles() {
   document.getElementById("mainColumn").innerHTML = `
   <p class="title">
-      The 17th century Palace
+      The 17th Century Palace
   </p>
   <p>
     Versailles is a city in the department of the Yvelines, Île-de-France, renowned worldwide for the Château de Versailles and the gardens of Versailles, designated UNESCO World Heritage Sites. Located in the western suburbs of the French capital, 17.1 km (10.6 mi) from the centre of Paris, Versailles is in the 21st century a wealthy suburb of Paris with a service-based economy and a major tourist destination as well. According to the 2017 census, the population of the city is 85,862 inhabitants, down from a peak of 94,145 in 1975.
