@@ -4,29 +4,41 @@ function locationSelector() {
   let cityResult;
   if (userSelections <= 5) {
     cityResult = "Kauai, Hawaii";
+    weatherName = "Koloa, Hawaii";
     Kauai();
+    getWeather(weatherName);
   } else if (userSelections == 6) {
     cityResult = "the Maldives";
+    weatherName = "Hithadhoo, Maldives";
     Maldives();
+    getWeather(weatherName);
   } else if (userSelections == 7) {
     cityResult = "Versailles, France";
+    weatherName = "Versailles, France";
     Versailles();
+    getWeather(weatherName);
   } else if (userSelections == 8) {
     cityResult = "London, UK";
+    weatherName = "London, UK";
     London();
+    getWeather(weatherName);
   } else if (userSelections == 9) {
     cityResult = "Tokyo, Japan";
+    weatherName = "Tokyo, Japan";
     Tokyo();
+    getWeather(weatherName);
   } else {
     cityResult = "New York City";
+    weatherName = "New York City";
     newYorkCity();
+    getWeather(weatherName);
   }
   document.getElementById("cityName").textContent = cityResult;
   SearchPhotos(cityResult);
 }
 locationSelector();
 
-//API Photo Search
+//Pixabay API Photo Search
 function SearchPhotos(cityResult) {
   let url = `https://pixabay.com/api/?key=18404298-c06d772fc6ab5b9c57d22dda6&q=${cityResult}`;
   //make a request to api
@@ -42,6 +54,52 @@ function SearchPhotos(cityResult) {
       let hit2 = document.getElementById("hit2");
       hit2.setAttribute("src", data.hits[3].largeImageURL);
     });
+}
+
+//OpenWeather API Search
+function getWeather (weatherName) {
+  let longlatURL = `https://api.openweathermap.org/data/2.5/forecast?q=${weatherName}&units=metric&cnt=1&appid=8f1123f07caa7464aa80ecc99167d3f0`
+
+  return fetch(longlatURL)
+      .then(function (response) {
+          return response.json()
+      })
+      .then(function (longlatResults) {
+          console.log(longlatResults)
+          let lon = longlatResults.city.coord.lon
+          let lat = longlatResults.city.coord.lat
+
+          let weatherURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely,hourly&appid=8f1123f07caa7464aa80ecc99167d3f0`
+
+          return fetch(weatherURL)
+      .then(function (response) {
+          return response.json()
+      })
+      .then(function (weatherResults) {
+          console.log(weatherResults)
+
+          // Location's weather.
+          document.getElementById('cityName').innerHTML = `
+          ${city} <img src="images/${weatherResults.current.weather[0].icon}.svg" style="width:50px;height50px;" class="has-image-centered" alt="${weatherResults.current.weather[0].description} weather icon.">`
+
+          document.getElementById('date').innerHTML = `${today}`
+
+          document.getElementById('currentTemp').innerHTML = `
+          <text class="title is-0">${Math.round(weatherResults.current.temp)} C</text>`
+
+          document.getElementById('currentHumidity').innerHTML = `
+          <text class="title is-0">${weatherResults.current.humidity}%</text>`
+
+          document.getElementById('currentWind').innerHTML = `
+          <text class="title is-0">${weatherResults.current.wind_speed}</text><text class="title is-3">km/h</text>`
+
+          })
+
+      })
+      .catch (function (error) {
+          document.getElementById('searchError').textContent = "Invalid city name."
+          localStorage.clear();
+      })
 }
 
 // Display City Information
