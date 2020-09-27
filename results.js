@@ -205,4 +205,5 @@ reStartButton.addEventListener('click', backToMain)
 
 function backToMain(){
   location.replace("index.html")
+  localStorage.clear()
 }
