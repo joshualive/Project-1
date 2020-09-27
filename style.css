@@ -11341,28 +11341,28 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 200px;
+    width: 10%;
   }
 
   .bl-fixed {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 200px;
+    width: 10%;
   }
 
   .tr-fixed {
     position: fixed;
     top: 0;
     right: 0;
-    width: 200px;
+    width: 10%;
   }
 
   .tl-fixed {
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px;
+    width: 10%;
   }
 
   .is-grey {
