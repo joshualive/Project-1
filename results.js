@@ -144,29 +144,10 @@ function London() {
       The Swinging City
   </p>
   <p>
-    London is one of the leading tourist destinations in the world and in 2015 was ranked as the most visited city in the world with over 65 million visits. It is also the top city in the world by visitor cross-border spending, estimated at US$20.23 billion in 2015. Tourism is one of London's prime industries, employing the equivalent of 350,000 full-time workers in 2003, and the city accounts for 54% of all inbound visitor spending in the UK. As of 2016 London was the world top city destination as ranked by TripAdvisor users.
-  </p>
-  <p>
-    In 2015 the top most-visited attractions in the UK were all in London. The top 10 most visited attractions were: (with visits per venue)
-  </p>
-  <p>
-    The British Museum: 6,820,686
-    The National Gallery: 5,908,254
-    The Natural History Museum (South Kensington): 5,284,023
-    The Southbank Centre: 5,102,883
-    Tate Modern: 4,712,581
-    The Victoria and Albert Museum (South Kensington): 3,432,325
-    The Science Museum: 3,356,212
-    Somerset House: 3,235,104
-    The Tower of London: 2,785,249
-    The National Portrait Gallery: 2,145,486
-    The number of hotel rooms in London in 2015 stood at 138,769, and is expected to grow over the years.
+    London is one of the leading tourist destinations in the world and in 2015 was ranked as the most visited city in the world with over 65 million visits. It is also the top city in the world by visitor cross-border spending, estimated at US$20.23 billion in 2015. Tourism is one of London's prime industries, employing the equivalent of 350,000 full-time workers in 2003, and the city accounts for 54% of all inbound visitor spending in the UK. As of 2016 London was the world top city destination as ranked by TripAdvisor users. In 2015 the top most-visited attractions in the UK were all in London. The top 10 most visited attractions were: (with visits per venue)
   </p>
   <p>
     Situated on one of the world's largest natural harbors, New York City is composed of five boroughs, each of which is a county of the State of New York. The five boroughs—Brooklyn, Queens, Manhattan, the Bronx, and Staten Island—were consolidated into a single city in 1898. The city and its metropolitan area constitute the premier gateway for legal immigration to the United States. As many as 800 languages are spoken in New York,[18] making it the most linguistically diverse city in the world. New York is home to more than 3.2 million residents born outside the United States, the largest foreign-born population of any city in the world as of 2016. As of 2019, the New York metropolitan area is estimated to produce a gross metropolitan product (GMP) of $2.0 trillion. If the New York metropolitan area were a sovereign state, it would have the eighth-largest economy in the world. New York is home to the highest number of billionaires of any city in the world.
-  </p>
-  <p>
-    London's finance industry is based in the City of London and Canary Wharf, the two major business districts in London. London is one of the pre-eminent financial centres of the world as the most important location for international finance. London took over as a major financial centre shortly after 1795 when the Dutch Republic collapsed before the Napoleonic armies. For many bankers established in Amsterdam (e.g. Hope, Baring), this was only time to move to London. The London financial elite was strengthened by a strong Jewish community from all over Europe capable of mastering the most sophisticated financial tools of the time. This unique concentration of talents accelerated the transition from the Commercial Revolution to the Industrial Revolution. By the end of the 19th century, Britain was the wealthiest of all nations, and London a leading financial centre. Still, as of 2016 London tops the world rankings on the Global Financial Centres Index (GFCI), and it ranked second in A.T. Kearney's 2018 Global Cities Index.
   </p>
   <p>
     The London Underground, commonly referred to as the Tube, is the oldest and third longest metro system in the world. The system serves 270 stations and was formed from several private companies, including the world's first underground electric line, the City and South London Railway. It dates from 1863.
