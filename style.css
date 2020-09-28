@@ -2396,6 +2396,7 @@
   
   .progress::-webkit-progress-value {
     background-color: #4a4a4a;
+    transition: width 0.5s ease;
   }
   
   .progress::-moz-progress-bar {

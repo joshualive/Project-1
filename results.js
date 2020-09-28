@@ -4,29 +4,41 @@ function locationSelector() {
   let cityResult;
   if (userSelections <= 5) {
     cityResult = "Kauai, Hawaii";
+    weatherName = "Koloa, Hawaii";
     Kauai();
+    getWeather(weatherName);
   } else if (userSelections == 6) {
-    cityResult = "Maldives";
+    cityResult = "the Maldives";
+    weatherName = "Hithadhoo, Maldives";
     Maldives();
+    getWeather(weatherName);
   } else if (userSelections == 7) {
     cityResult = "Versailles, France";
+    weatherName = "Versailles, France";
     Versailles();
+    getWeather(weatherName);
   } else if (userSelections == 8) {
     cityResult = "London, UK";
+    weatherName = "London, UK";
     London();
+    getWeather(weatherName);
   } else if (userSelections == 9) {
     cityResult = "Tokyo, Japan";
+    weatherName = "Tokyo, Japan";
     Tokyo();
+    getWeather(weatherName);
   } else {
     cityResult = "New York City";
+    weatherName = "New York City";
     newYorkCity();
+    getWeather(weatherName);
   }
   document.getElementById("cityName").textContent = cityResult;
   SearchPhotos(cityResult);
 }
 locationSelector();
 
-//API Photo Search
+//Pixabay API Photo Search
 function SearchPhotos(cityResult) {
   let url = `https://pixabay.com/api/?key=18404298-c06d772fc6ab5b9c57d22dda6&q=${cityResult}`;
   //make a request to api
@@ -42,6 +54,49 @@ function SearchPhotos(cityResult) {
       let hit2 = document.getElementById("hit2");
       hit2.setAttribute("src", data.hits[3].largeImageURL);
     });
+}
+
+//OpenWeather API Search
+function getWeather (weatherName) {
+  let longlatURL = `https://api.openweathermap.org/data/2.5/forecast?q=${weatherName}&units=metric&cnt=1&appid=8f1123f07caa7464aa80ecc99167d3f0`
+
+  return fetch(longlatURL)
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (longlatResults) {
+      console.log(longlatResults)
+      let lon = longlatResults.city.coord.lon
+      let lat = longlatResults.city.coord.lat
+
+      let weatherURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely,hourly&appid=8f1123f07caa7464aa80ecc99167d3f0`
+
+      return fetch(weatherURL)
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (weatherResults) {
+      console.log(weatherResults)
+
+      // Location's weather.
+      document.getElementById('weatherResults').innerHTML = `
+      <p class="title">
+        Current Weather:
+      </p>
+      <p class="block">
+        <text class="title is-5">Temperature: ${Math.round(weatherResults.current.temp)} C</text>
+      </p>
+      <p class="block">
+        <text class="title is-5">Humidity: ${weatherResults.current.humidity}%</text>
+      </p>
+      <p class="block">
+        <text class="title is-5">Wind Speed: ${weatherResults.current.wind_speed}km/h</text>
+      </p>
+      <p class="block">
+        <text class="title is-5">UV Index: ${weatherResults.current.uvi}</text>
+      </p>`
+      })
+    })
 }
 
 // Display City Information
@@ -68,14 +123,9 @@ function Tokyo() {
   </p>
   <p>
     Tokyo is a major industry. In 2006, 4.81 million foreigners and 420 million Japanese visits to Tokyo were made; the economic value of these visits totaled 9.4 trillion yen according to the government of Tokyo. Many tourists visit the various downtowns, stores, and entertainment districts throughout the neighborhoods of the special wards of Tokyo; particularly school children on class trips, a visit to Tokyo Tower is de rigueur.
-
-    Cultural offerings include both omnipresent Japanese pop culture and associated districts such as Shibuya and Harajuku, subcultural attractions such as Studio Ghibli anime center, as well as museums like the Tokyo National Museum, which houses 37% of the country's artwork national treasures (87/233). No buildings in Tokyo are World heritage sites and only the Jizo Hall of Shofuku-ji, a suburban temple, is a National treasure. Other popular attractions include the Imperial Palace, Meiji Shrine, and Sensō-ji, a popular temple. Finally, many tourists, particularly foreign tourists, visit Tsukiji Fish Market, as the time-zone difference leads to foreign visitors waking up very early local time. "The city's history can be appreciated in districts such as Asakusa and in many excellent museums, historic temples and gardens. Contrary to common perception, Tokyo also offers a number of attractive green spaces in the city center and within relatively short train rides at its outskirts."
   </p>
   <p>
-    Access to Tokyo is provided by airports including Narita Airport, Tokyo International Airport (Haneda, providing primarily domestic service), and the Shinkansen. Major hotel districts include Shinjuku and Tokyo Bay, although there are some hotels in many more districts.
-  </p>
-  <p>
-    "In 2018, more than 31 million international travellers visited Japan, up from around 6.8 million foreign visitors in 2009."
+    Access to Tokyo is provided by airports including Narita Airport, Tokyo International Airport (Haneda, providing primarily domestic service), and the Shinkansen. Major hotel districts include Shinjuku and Tokyo Bay, although there are some hotels in many more districts. In 2018, more than 31 million international travellers visited Japan, up from around 6.8 million foreign visitors in 2009.
   </p>
   <p>
     Tokyo has many museums. In Ueno Park, there is the Tokyo National Museum, the country's largest museum and specializing in traditional Japanese art; the National Museum of Western Art and Ueno Zoo. Other museums include the National Museum of Emerging Science and Innovation in Odaiba; the Edo-Tokyo Museum in Sumida, across the Sumida River from the center of Tokyo; the Nezu Museum in Aoyama; and the National Diet Library, National Archives, and the National Museum of Modern Art, which are near the Imperial Palace.
@@ -84,12 +134,6 @@ function Tokyo() {
     Tokyo has many theaters for performing arts. These include national and private theaters for traditional forms of Japanese drama. Noteworthy are the National Noh Theatre for noh and the Kabuki-za for Kabuki. Symphony orchestras and other musical organizations perform modern and traditional music. The New National Theater Tokyo in Shibuya is the national center for the performing arts, including opera, ballet, contemporary dance and drama. Tokyo also hosts modern Japanese and international pop, and rock music at venues ranging in size from intimate clubs to internationally known areas such as the Nippon Budokan.
   </p>
   <p>
-    The Sanja Festival in Asakusa
-    Many different festivals occur throughout Tokyo. Major events include the Sannō at Hie Shrine, the Sanja at Asakusa Shrine, and the biennial Kanda Festivals. The last features a parade with elaborately decorated floats and thousands of people. Annually on the last Saturday of July, an enormous fireworks display over the Sumida River attracts over a million viewers. Once cherry blossoms bloom in spring, many residents gather in Ueno Park, Inokashira Park, and the Shinjuku Gyoen National Garden for picnics under the blossoms.
-  <p>
-  <p>
-    Harajuku, a neighborhood in Shibuya, is known internationally for its youth style, fashion and cosplay.
-  </p>
     Cuisine in Tokyo is internationally acclaimed. In November 2007, Michelin released their first guide for fine dining in Tokyo, awarding 191 stars in total, or about twice as many as Tokyo's nearest competitor, Paris. As of 2017, 227 restaurants in Tokyo have been awarded (92 in Paris). Twelve establishments were awarded the maximum of three stars (Paris has 10), 54 received two stars, and 161 earned one star.
   </p>`;
 }
@@ -100,29 +144,10 @@ function London() {
       The Swinging City
   </p>
   <p>
-    London is one of the leading tourist destinations in the world and in 2015 was ranked as the most visited city in the world with over 65 million visits. It is also the top city in the world by visitor cross-border spending, estimated at US$20.23 billion in 2015. Tourism is one of London's prime industries, employing the equivalent of 350,000 full-time workers in 2003, and the city accounts for 54% of all inbound visitor spending in the UK. As of 2016 London was the world top city destination as ranked by TripAdvisor users.
-  </p>
-  <p>
-    In 2015 the top most-visited attractions in the UK were all in London. The top 10 most visited attractions were: (with visits per venue)
-  </p>
-  <p>
-    The British Museum: 6,820,686
-    The National Gallery: 5,908,254
-    The Natural History Museum (South Kensington): 5,284,023
-    The Southbank Centre: 5,102,883
-    Tate Modern: 4,712,581
-    The Victoria and Albert Museum (South Kensington): 3,432,325
-    The Science Museum: 3,356,212
-    Somerset House: 3,235,104
-    The Tower of London: 2,785,249
-    The National Portrait Gallery: 2,145,486
-    The number of hotel rooms in London in 2015 stood at 138,769, and is expected to grow over the years.
+    London is one of the leading tourist destinations in the world and in 2015 was ranked as the most visited city in the world with over 65 million visits. It is also the top city in the world by visitor cross-border spending, estimated at US$20.23 billion in 2015. Tourism is one of London's prime industries, employing the equivalent of 350,000 full-time workers in 2003, and the city accounts for 54% of all inbound visitor spending in the UK. As of 2016 London was the world top city destination as ranked by TripAdvisor users. In 2015 the top most-visited attractions in the UK were all in London. The top 10 most visited attractions were: (with visits per venue)
   </p>
   <p>
     Situated on one of the world's largest natural harbors, New York City is composed of five boroughs, each of which is a county of the State of New York. The five boroughs—Brooklyn, Queens, Manhattan, the Bronx, and Staten Island—were consolidated into a single city in 1898. The city and its metropolitan area constitute the premier gateway for legal immigration to the United States. As many as 800 languages are spoken in New York,[18] making it the most linguistically diverse city in the world. New York is home to more than 3.2 million residents born outside the United States, the largest foreign-born population of any city in the world as of 2016. As of 2019, the New York metropolitan area is estimated to produce a gross metropolitan product (GMP) of $2.0 trillion. If the New York metropolitan area were a sovereign state, it would have the eighth-largest economy in the world. New York is home to the highest number of billionaires of any city in the world.
-  </p>
-  <p>
-    London's finance industry is based in the City of London and Canary Wharf, the two major business districts in London. London is one of the pre-eminent financial centres of the world as the most important location for international finance. London took over as a major financial centre shortly after 1795 when the Dutch Republic collapsed before the Napoleonic armies. For many bankers established in Amsterdam (e.g. Hope, Baring), this was only time to move to London. The London financial elite was strengthened by a strong Jewish community from all over Europe capable of mastering the most sophisticated financial tools of the time. This unique concentration of talents accelerated the transition from the Commercial Revolution to the Industrial Revolution. By the end of the 19th century, Britain was the wealthiest of all nations, and London a leading financial centre. Still, as of 2016 London tops the world rankings on the Global Financial Centres Index (GFCI), and it ranked second in A.T. Kearney's 2018 Global Cities Index.
   </p>
   <p>
     The London Underground, commonly referred to as the Tube, is the oldest and third longest metro system in the world. The system serves 270 stations and was formed from several private companies, including the world's first underground electric line, the City and South London Railway. It dates from 1863.
@@ -181,7 +206,7 @@ function Maldives() {
 function Versailles() {
   document.getElementById("mainColumn").innerHTML = `
   <p class="title">
-      The 17th century Palace
+      The 17th Century Palace
   </p>
   <p>
     Versailles is a city in the department of the Yvelines, Île-de-France, renowned worldwide for the Château de Versailles and the gardens of Versailles, designated UNESCO World Heritage Sites. Located in the western suburbs of the French capital, 17.1 km (10.6 mi) from the centre of Paris, Versailles is in the 21st century a wealthy suburb of Paris with a service-based economy and a major tourist destination as well. According to the 2017 census, the population of the city is 85,862 inhabitants, down from a peak of 94,145 in 1975.
